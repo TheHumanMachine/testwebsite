@@ -1,47 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Local Pizza Place</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap CDN for carousel & styling -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #ce8986cb; /* light peachy tone */
-    }
-    .order-btn {
-      font-size: 16px;
-      padding: 10px 20px;
-      margin-top: 10px;
-      background-color: #e63946;
-      color: white;
-      border: none;
-      border-radius: 1px;
-      text-transform: uppercase;
-    }
-    .order-section {
-      text-align: center;
-      background: #f1f1f1;
-      padding: 20px 10px;
-    }
-    .location-section {
-      padding: 30px 20px;
-      text-align: center;
-      background-color: #fff;
-    }
-    .navbar-brand {
-      font-weight: bold;
-      font-size: 24px;
-    }
-
-  </style>
-</head>
-<body>
-
-<!-- Navigation -->
-<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Local Pizza Place</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CDN for carousel & styling -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #c63737c4; /* light peachy tone */
+      }
+      .order-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: #e63946;
+        color: white;
+        border: none;
+        border-radius: 1px;
+        text-transform: uppercase;
+      }
+      .order-section {
+        text-align: center;
+        background: #f1f1f1;
+        padding: 20px 10px;
+      }
+      .location-section {
+        padding: 30px 20px;
+        text-align: center;
+        background-color: #fff;
+      }
+      .navbar-brand {
+        font-weight: bold;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">PizzaPlace</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -60,263 +61,542 @@
   </div>
 </nav> -->
 
-<!-- Carousel Styles -->
-<style>
-    .order-button-section {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #f8f9fa; /* light background */
-  }
+    <!-- Carousel Styles -->
+    <style>
+      .order-button-section {
+        text-align: center;
+        padding: 10px 0;
+        background-color: #f8f9fa; /* light background */
+      }
 
-  .order-button {
-    display: inline-block;
-    padding: 9px 18px;
-    font-size: 20px;
-    background-color: #e63946; /* pizza red */
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
+      .order-button {
+        display: inline-block;
+        padding: 9px 18px;
+        font-size: 20px;
+        background-color: #e63946; /* pizza red */
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
 
-  .order-button:hover {
-    background-color: #c62828; /* darker red on hover */
-  }
-  #pizzaCarousel {
-    height: 400px;
-    overflow: hidden;
-  }
+      .order-button:hover {
+        background-color: #c62828; /* darker red on hover */
+      }
+      #pizzaCarousel {
+        height: 400px;
+        overflow: hidden;
+      }
 
-  #pizzaCarousel .carousel-inner,
-  #pizzaCarousel .carousel-item,
-  #pizzaCarousel .carousel-item img {
-    height: 100%;
-  }
-  .carousel-caption {
-    background-color: rgba(0, 0, 0, 0.194); /* semi-transparent black */
-    padding: 1rem 2rem;
-    border-radius: 16px;
-  }
+      #pizzaCarousel .carousel-inner,
+      #pizzaCarousel .carousel-item,
+      #pizzaCarousel .carousel-item img {
+        height: 100%;
+      }
+      .carousel-caption {
+        background-color: rgba(0, 0, 0, 0.194); /* semi-transparent black */
+        padding: 1rem 2rem;
+        border-radius: 16px;
+      }
 
-  .carousel-caption h5,
-  .carousel-caption p {
-    color: #fff !important;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.7); /* subtle shadow for clarity */
-  }
+      .carousel-caption h5,
+      .carousel-caption p {
+        color: #fff !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* subtle shadow for clarity */
+      }
 
-  #pizzaCarousel .carousel-item img {
-    object-fit: cover;
-    width: 100%;
-  }
-</style>
+      #pizzaCarousel .carousel-item img {
+        object-fit: cover;
+        width: 100%;
+      }
+    </style>
 
-<!-- Menu styles -->
-<style>
-  .menu-category {
-    padding: 30px 15px;
-    background-color: #fff8f0;
-  }
+    <!-- Menu styles -->
+    <style>
+      .menu-category {
+        padding: 30px 15px;
+        background-color: #fff8f0;
+      }
 
-  .menu-category h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-    color: #e63946;
-  }
+      .menu-category h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        color: #e63946;
+      }
 
-  .menu-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
+      .menu-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
 
-  @media (min-width: 600px) {
-    .menu-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
+      @media (min-width: 600px) {
+        .menu-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
 
-  .menu-item {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: box-shadow 0.2s ease;
-  }
+      .menu-item {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: box-shadow 0.2s ease;
+      }
 
-  .menu-item:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
+      .menu-item:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
 
-  .menu-item img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
+      .menu-item img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
 
-  .menu-title {
-    padding: 10px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-align: center;
-    background: #fff;
-    color: #333;
-  }
+      .menu-title {
+        padding: 10px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-align: center;
+        background: #fff;
+        color: #333;
+      }
 
-  .menu-details {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    background-color: #fafafa;
-    padding: 0 10px;
-  }
+      .menu-details {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background-color: #fafafa;
+        padding: 0 10px;
+      }
 
-  .menu-details.open {
-    padding: 10px;
-    max-height: 200px;
-  }
+      .menu-details.open {
+        padding: 10px;
+        max-height: 200px;
+      }
 
-  .menu-details .price {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #222;
-  }
+      .menu-details .price {
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #222;
+      }
 
-  .menu-details p {
-    font-size: 0.9rem;
-    color: #555;
-    margin: 0;
-  }
-</style>
+      .menu-details p {
+        font-size: 0.9rem;
+        color: #555;
+        margin: 0;
+      }
+    </style>
 
-<!-- Logo container -->
-<style>
-  .responsive-image-container {
-    width: 75%;
-    max-width: 75%;
-    padding: 50;
-    margin: 0 auto 10px auto;
-  }
+    <!-- Logo container -->
+    <style>
+      .responsive-image-container {
+        width: 75%;
+        max-width: 75%;
+        padding: 50;
+        margin: 0 auto 10px auto;
+      }
 
-  .responsive-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-  }
+      .responsive-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+      }
 
-  @media (min-width: 768px) {
-    .responsive-image-container {
-      width: 500px; /* or whatever custom size you want on desktop */
-    }
-  }
-</style>
+      @media (min-width: 768px) {
+        .responsive-image-container {
+          width: 500px; /* or whatever custom size you want on desktop */
+        }
+      }
+    </style>
 
+    <div class="responsive-image-container">
+      <img
+        src="images/paradiseLogo_transparent2.png"
+        alt="ParadisePizza"
+        class="responsive-image"
+      />
+    </div>
 
-<div class="responsive-image-container">
-  <img src="images/paradiseLogo_transparent2.png" alt="ParadisePizza" class="responsive-image">
-</div>
+    <div class="order-button-section dual-buttons">
+      <a
+        class="order-button"
+        href="https://orderonline.granburyrs.com/slice/index.html?accountId=0c169cc2-747a-4ad7-929e-d89f424d7a93"
+        role="button"
+        >Order Online</a
+      >
+      <!-- <a href="#" class="order-button">Order Online</a> -->
+      <a href="#menu" class="order-button">Explore Menu</a>
+    </div>
 
+    <section id="menu" class="menu-category">
+      <!-- <h2>Pizza</h2> -->
+      <h2
+        style="
+          background-color: rgba(75, 83, 87, 0.058);
+          color: #e63946;
+          padding: 10px;
+        "
+      >
+        Pizza
+      </h2>
+      <div class="menu-grid">
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/pizza.jpg" alt="Classic Pepperoni" />
+          <div class="menu-title">Classic Pepperoni</div>
+          <div class="menu-details">
+            <div class="price">$12.99</div>
+            <p>Sizzling, cheesy, delicious pepperoni pizza.</p>
+          </div>
+        </div>
 
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/cheese.jpg" alt="Cheese Lovers" />
+          <div class="menu-title">Cheese Lovers</div>
+          <div class="menu-details">
+            <div class="price">$11.49</div>
+            <p>Overflowing with mozzarella, perfect for cheese fans.</p>
+          </div>
+        </div>
 
-
-<div class="order-button-section dual-buttons">
-  <a class="order-button" href="https://orderonline.granburyrs.com/slice/index.html?accountId=0c169cc2-747a-4ad7-929e-d89f424d7a93" role="button">Order Online</a>
-  <!-- <a href="#" class="order-button">Order Online</a> -->
-  <a href="#menu" class="order-button">Explore Menu</a>
-</div>
-
-
-<section id="menu" class="menu-category">
-  <!-- <h2>Pizza</h2> -->
-  <h2 style="background-color: rgba(75, 83, 87, 0.058); color: #e63946; padding: 10px;">
-    Pizza
-  </h2>
-  <div class="menu-grid">
-    <div class="menu-item" onclick="toggleDetails(this)">
-      <img src="images/pizza.jpg" alt="Classic Pepperoni">
-      <div class="menu-title">Classic Pepperoni</div>
-      <div class="menu-details">
-        <div class="price">$12.99</div>
-        <p>Sizzling, cheesy, delicious pepperoni pizza.</p>
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/meatlovers.jpg" alt="Meat Feast" />
+          <div class="menu-title">Meat Feast</div>
+          <div class="menu-details">
+            <div class="price">$13.49</div>
+            <p>Loaded with sausage, bacon, ham, and more.</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="menu-item" onclick="toggleDetails(this)">
-      <img src="images/cheese.jpg" alt="Cheese Lovers">
-      <div class="menu-title">Cheese Lovers</div>
-      <div class="menu-details">
-        <div class="price">$11.49</div>
-        <p>Overflowing with mozzarella, perfect for cheese fans.</p>
+      <div style="margin-bottom: 20px"></div>
+
+      <!-- <h2>Burritos</h2> -->
+      <h2
+        style="
+          background-color: rgba(75, 83, 87, 0.058);
+          color: #e63946;
+          padding: 10px;
+        "
+      >
+        Specialty Pizza
+      </h2>
+
+      <div class="menu-grid">
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/pizza.jpg" alt="BLT Sub" />
+          <div class="menu-title">Big Island BBQ Pizza</div>
+          <div class="menu-details">
+            <div class="price">$12.99</div>
+            <p>
+              Our Flavorful Thin and Crispy BBQ pizza with bite. Includes
+              Grilled Chicken, Bacon, Red Onions, diced Jalapenos, and
+              Pineapple, all smothered in a Mozzarella and Cheddar blend. Cooked
+              well done to bring out all of the delicious flavor. Priced same as
+              Deluxe
+            </p>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/cheese.jpg" alt="Bahama Sub" />
+          <div class="menu-title">Bahama Pizza</div>
+          <div class="menu-details">
+            <div class="price">$11.49</div>
+            <p>
+              For the Love of Meat! Our 4 Meat combo is loaded with Ham,
+              Pepperoni, Bacon and Sausage. Sure to please the carnivore in you.
+              Priced as 5 item
+            </p>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/pizza.jpg" alt="BBQ Chicken sub" />
+          <div class="menu-title">Chicken Ranch Pizza</div>
+          <div class="menu-details">
+            <div class="price">$13.49</div>
+            <p>
+              Ranch Sauce, Grilled Chicken, Red Onion, Green Pepper & Diced
+              Tomato. Great Hot or Cold! Add Bacon if you wish!
+            </p>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/cheese.jpg" alt="Garden Veggie" />
+          <div class="menu-title">Hawaiian Pizza</div>
+          <div class="menu-details">
+            <div class="price">$10.99</div>
+            <p>Ham, Bacon, and Pineapple over our signature pizza sauce</p>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/pizza.jpg" alt="Garden Veggie" />
+          <div class="menu-title">Super B.L.T. Pizza</div>
+          <div class="menu-details">
+            <div class="price">$10.99</div>
+            <p>
+              A double layer of bacon with melted cheese, Topped with fresh
+              lettuce, tomato and Mayo right out of the oven
+            </p>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/cheese.jpg" alt="Garden Veggie" />
+          <div class="menu-title">Taco Pizza</div>
+          <div class="menu-details">
+            <div class="price">$10.99</div>
+            <p>
+              Our very own Home Made Burrito Sauce, topped with All Beef Taco
+              Meat, Onions, Black Olives & Cheddar Cheese. Finished off after
+              baking with fresh Lettuce, Tomato, crushed tortilla chips, & a
+              drizzle of Ranch. Oh so yummy!
+            </p>
+          </div>
+        </div>
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/pizza.jpg" alt="Garden Veggie" />
+          <div class="menu-title">Tsunami Pizza (Top Seller)</div>
+          <div class="menu-details">
+            <div class="price">$10.99</div>
+            <p>
+              This customer inspired pizza is made with our very own Honey
+              Mustard Sauce, topped with Bacon, Diced Breaded Chicken, Diced
+              Jalapeno, Pineapple, Diced Yellow Pepper. After baking we finish
+              it off with Diced Tomato, spices and Buttermilk Ranch to create
+              that perfect Giant wave of flavor in every bite.
+            </p>
+          </div>
+        </div>
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/cheese.jpg" alt="Garden Veggie" />
+          <div class="menu-title">Wild Buffalo Chicken Pizza</div>
+          <div class="menu-details">
+            <div class="price">$10.99</div>
+            <p>
+              Breaded white meat chicken pieces tossed in spicy Buffalo Sauce &
+              pineapple covered with cheddar cheese. Topped off with fresh
+              chopped celery, buttermilk ranch and more Buffalo sauce right out
+              of the oven.
+            </p>
+          </div>
+        </div>
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/pizza.jpg" alt="Garden Veggie" />
+          <div class="menu-title">Zesty B.B.Q. Pizza</div>
+          <div class="menu-details">
+            <div class="price">$10.99</div>
+            <p>
+              Our thin and crispy crust topped with Sweet BBQ Sauce, Grilled
+              Chicken, Onion, Meatball, Green Pepper & Mushroom
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
+      <div style="margin-bottom: 20px"></div>
+      <!-- <h2>Subs</h2> -->
+      <h2
+        style="
+          background-color: rgba(75, 83, 87, 0.058);
+          color: #e63946;
+          padding: 10px;
+        "
+      >
+        Oven Toasted Subs (10 Inches)
+      </h2>
 
-    <div class="menu-item" onclick="toggleDetails(this)">
-      <img src="images/meatlovers.jpg" alt="Meat Feast">
-      <div class="menu-title">Meat Feast</div>
-      <div class="menu-details">
-        <div class="price">$13.49</div>
-        <p>Loaded with sausage, bacon, ham, and more.</p>
+      <div class="menu-grid">
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/blt_sub.png" alt="BLT Sub" />
+          <div class="menu-title">BLT</div>
+          <div class="menu-details">
+            <div class="price">$12.99</div>
+            <p>Bacon, Cheese, Lettuce, Tomato, and Mayo.</p>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/bahama_sub.png" alt="Bahama Sub" />
+          <div class="menu-title">Bahama Sub</div>
+          <div class="menu-details">
+            <div class="price">$11.49</div>
+            <p>
+              For the Meat Eater! Includes Ham, Pepperoni, Bacon, Sausage, Pizza
+              Sauce, and Cheese
+            </p>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/bbqChickenSub.png" alt="BBQ Chicken sub" />
+          <div class="menu-title">BBQ Chicken Sub</div>
+          <div class="menu-details">
+            <div class="price">$13.49</div>
+            <p>
+              Grilled Chicken, Bacon, Red Onions, BBQ Sauce & Cheddar Cheese
+            </p>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/pizza.jpg" alt="Garden Veggie" />
+          <div class="menu-title">Chicken Club Sub</div>
+          <div class="menu-details">
+            <div class="price">$10.99</div>
+            <p>Grilled Chicken, Bacon, Cheese, Lettuce, Tomato, & Mayo</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    </div>
-  </div>
+      <div style="margin-bottom: 20px"></div>
+      <!-- <h2>Subs</h2> -->
+      <h2
+        style="
+          background-color: rgba(75, 83, 87, 0.058);
+          color: #e63946;
+          padding: 10px;
+        "
+      >
+        Stromboli
+      </h2>
 
- <div style="margin-bottom: 20px;"></div>
+      <div class="menu-grid">
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/blt_sub.png" alt="BLT Sub" />
+          <div class="menu-title">Large 3 Item Stromboli</div>
+          <div class="menu-details">
+            <div class="price">$12.99</div>
+            <p>
+              Our hand tossed pizza dough, wrapped around the cheese and
+              toppings of your choice and baked to a golden brown. (feeds 2-4)
+              Additional items $1.50 each.
+            </p>
+          </div>
+        </div>
 
-  <!-- <h2>Burritos</h2> -->
-   <h2 style="background-color: rgba(75, 83, 87, 0.058); color: #e63946; padding: 10px;">
-    Oven Toasted Subs (10 Inches)
-  </h2>
-
-  <div class="menu-grid">
-    <div class="menu-item" onclick="toggleDetails(this)">
-      <img src="images/blt_sub.png" alt="BLT Sub">
-      <div class="menu-title">BLT</div>
-      <div class="menu-details">
-        <div class="price">$12.99</div>
-        <p>Bacon, Cheese, Lettuce, Tomato, and Mayo.</p>
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/pizza.jpg" alt="Garden Veggie" />
+          <div class="menu-title">Small 3 Item Stromboli</div>
+          <div class="menu-details">
+            <div class="price">$10.99</div>
+            <p>
+              Our hand tossed pizza dough, wrapped around the cheese and
+              toppings of your choice and baked to a golden brown. (feeds 1-2)
+              Additional items $1 each.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="menu-item" onclick="toggleDetails(this)">
-      <img src="images/bahama_sub.png" alt="Bahama Sub">
-      <div class="menu-title">Bahama Sub</div>
-      <div class="menu-details">
-        <div class="price">$11.49</div>
-        <p>For the Meat Eater! Includes Ham, Pepperoni, Bacon, Sausage, Pizza Sauce, and Cheese</p>
+      <div style="margin-bottom: 20px"></div>
+      <!-- <h2>Dinners</h2> -->
+      <h2
+        style="
+          background-color: rgba(75, 83, 87, 0.058);
+          color: #e63946;
+          padding: 10px;
+        "
+      >
+        Dinners
+      </h2>
+
+      <div class="menu-grid">
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/blt_sub.png" alt="BLT Sub" />
+          <div class="menu-title">Cheese Ravioli Dinner</div>
+          <div class="menu-details">
+            <div class="price">$12.99</div>
+            <p>
+              Cheese filled Ravioli shells smothered in our famous sauce. Served
+              with a side of Garlic Toast.
+            </p>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/pizza.jpg" alt="Garden Veggie" />
+          <div class="menu-title">Homemade Lasagna Dinner</div>
+          <div class="menu-details">
+            <div class="price">$10.99</div>
+            <p>
+              Lasagna is back! Made fresh in house with seasoned beef, ricotta &
+              mozzarella cheeses and house made sauce. Served with side of
+              garlic toast. Note: We may sell out of lasagna from time to time
+              due to preparation time and popularity.
+            </p>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/pizza.jpg" alt="Garden Veggie" />
+          <div class="menu-title">Cheese or Meat Manicotti Dinner</div>
+          <div class="menu-details">
+            <div class="price">$10.99</div>
+            <p>
+              3 Large tubes stuffed with Ricotta Cheese and herbs or Italian
+              meat, covered in tomato sauce and mozzarella cheese. Served with a
+              10″ garlic toast.
+            </p>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/pizza.jpg" alt="Garden Veggie" />
+          <div class="menu-title">Spaghetti Dinner</div>
+          <div class="menu-details">
+            <div class="price">$10.99</div>
+            <p>
+              Traditional Spaghetti, cooked to perfection, oven baked in our
+              famous sauce
+            </p>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/pizza.jpg" alt="Garden Veggie" />
+          <div class="menu-title">Spaghetti & Meatball Dinner</div>
+          <div class="menu-details">
+            <div class="price">$10.99</div>
+            <p>Our Traditional Spaghetti, topped with tasty beef meatballs.</p>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/pizza.jpg" alt="Garden Veggie" />
+          <div class="menu-title">Meatball Dinner</div>
+          <div class="menu-details">
+            <div class="price">$10.99</div>
+            <p>
+              5 of our large Italian meatballs, smothered in our famous sauce
+              and topped with mozzarella. Served with a side of Garlic Toast.
+            </p>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="toggleDetails(this)">
+          <img src="images/pizza.jpg" alt="Garden Veggie" />
+          <div class="menu-title">Extra 10″ Garlic Toast</div>
+          <div class="menu-details">
+            <div class="price">$10.99</div>
+            <p>For those times that 1 is not enough.</p>
+          </div>
+        </div>
       </div>
-    </div>
+      <!-- Dinner subsection-->
+    </section>
 
-    <div class="menu-item" onclick="toggleDetails(this)">
-      <img src="images/bbqChickenSub.png" alt="BBQ Chicken sub">
-      <div class="menu-title">BBQ Chicken Sub</div>
-      <div class="menu-details">
-        <div class="price">$13.49</div>
-        <p>Grilled Chicken, Bacon, Red Onions, BBQ Sauce & Cheddar Cheese</p>
-      </div>
-    </div>
-
-    <div class="menu-item" onclick="toggleDetails(this)">
-      <img src="images/veggie.jpg" alt="Garden Veggie">
-      <div class="menu-title">Chicken Club Sub</div>
-      <div class="menu-details">
-        <div class="price">$10.99</div>
-        <p>Grilled Chicken, Bacon, Cheese, Lettuce, Tomato, & Mayo</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- Carousel Markup -->
-<!-- <div id="pizzaCarousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- Carousel Markup -->
+    <!-- <div id="pizzaCarousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-
+    
     <div class="carousel-item active">
       <img src="images/pizza.jpg" class="d-block w-100" alt="Pepperoni Pizza">
       <div class="carousel-caption d-none d-md-block">
@@ -348,7 +628,7 @@
   </div>
 
   <!-- Left / Right Controls -->
-  <!-- <button class="carousel-control-prev" type="button" data-bs-target="#pizzaCarousel" data-bs-slide="prev">
+    <!-- <button class="carousel-control-prev" type="button" data-bs-target="#pizzaCarousel" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
@@ -358,54 +638,64 @@
   </button>
 </div>  -->
 
-<!-- Bootstrap JS Bundle (REQUIRED!) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS Bundle (REQUIRED!) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Order Online Section -->
+    <section class="order-section">
+      <h2>Craving Pizza?</h2>
+      <p>
+        Order now and get it hot & fresh at your doorstep. Fast delivery,
+        amazing taste – always satisfying.
+      </p>
+      <!-- <button class="order-btn">Order Online</button> -->
+      <a
+        class="order-btn"
+        href="https://orderonline.granburyrs.com/slice/index.html?accountId=0c169cc2-747a-4ad7-929e-d89f424d7a93"
+        role="button"
+        >Order Online</a
+      >
+    </section>
 
-<!-- Order Online Section -->
-<section class="order-section">
-  <h2>Craving Pizza?</h2>
-  <p>Order now and get it hot & fresh at your doorstep. Fast delivery, amazing taste – always satisfying.</p>
-  <!-- <button class="order-btn">Order Online</button> -->
-   <a class="order-btn" href="https://orderonline.granburyrs.com/slice/index.html?accountId=0c169cc2-747a-4ad7-929e-d89f424d7a93" role="button">Order Online</a>
-</section>
+    <!-- Location Info -->
+    <section class="location-section">
+      <h3>Find Us</h3>
+      <p>8980 N. Rodgers Ct. Caledonia, MI 49316</p>
+      <div
+        class="hours-container"
+        style="max-width: 500px; margin: 0 auto; font-family: sans-serif"
+      >
+        <h2 style="text-align: center">Hours</h2>
 
-<!-- Location Info -->
-<section class="location-section">
-  <h3>Find Us</h3>
-  <p>8980 N. Rodgers Ct. Caledonia, MI 49316</p>
-<div class="hours-container" style="max-width: 500px; margin: 0 auto; font-family: sans-serif;">
-  <h2 style="text-align: center;">Hours</h2>
-  
-  <div>
-    <h5>Regular Hours</h5>
-    <ul style="list-style: none; padding: 0;">
-      <li><strong>Sunday:</strong> 4:00 PM – 9:00 PM</li>
-      <li><strong>Monday – Thursday:</strong> 4:00 PM – 9:00 PM</li>
-      <li><strong>Friday:</strong> 11:00 AM – 10:00 PM</li>
-      <li><strong>Saturday:</strong> 3:30 PM – 10:00 PM</li>
-    </ul>
-  </div>
+        <div>
+          <h5>Regular Hours</h5>
+          <ul style="list-style: none; padding: 0">
+            <li><strong>Sunday:</strong> 4:00 PM – 9:00 PM</li>
+            <li><strong>Monday – Thursday:</strong> 4:00 PM – 9:00 PM</li>
+            <li><strong>Friday:</strong> 11:00 AM – 10:00 PM</li>
+            <li><strong>Saturday:</strong> 3:30 PM – 10:00 PM</li>
+          </ul>
+        </div>
 
-  <div style="margin-top: 20px;">
-    <h5>Lunch Hours <span style="font-weight: normal;">(Slices Available)</span></h5>
-    <ul style="list-style: none; padding: 0;">
-      <li><strong>Thursday & Friday:</strong> 11:00 AM – 1:30 PM</li>
-    </ul>
-  </div>
-</div>
+        <div style="margin-top: 20px">
+          <h5>
+            Lunch Hours
+            <span style="font-weight: normal">(Slices Available)</span>
+          </h5>
+          <ul style="list-style: none; padding: 0">
+            <li><strong>Thursday & Friday:</strong> 11:00 AM – 1:30 PM</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-</section>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  function toggleDetails(el) {
-    const detail = el.querySelector('.menu-details');
-    detail.classList.toggle('open');
-  }
-</script>
-
-
-</body>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function toggleDetails(el) {
+        const detail = el.querySelector(".menu-details");
+        detail.classList.toggle("open");
+      }
+    </script>
+  </body>
 </html>
