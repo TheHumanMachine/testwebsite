@@ -305,6 +305,29 @@
         }
       }
     </style>
+    <!-- Google maps iframe -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .map-wrapper {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+      }
+
+      iframe {
+        width: 100%;
+        height: 300px;
+        border: 0;
+        display: block;
+      }
+    </style>
+
     <button class="fab" onclick="openModal()">☰</button>
 
     <!-- Modal -->
@@ -779,7 +802,24 @@
     <section class="location-section">
       <h3 id="find-us">Find Us</h3>
       <p>8980 N. Rodgers Ct. Caledonia, MI 49316</p>
-      <iframe
+      <div class="map-wrapper">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2260.3239261844255!2d-85.51012712504868!3d42.80172490708607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x881848b89d7be775%3A0x4810ca3f3461d66f!2sParadise%20Pizza!5e1!3m2!1sen!2sus!4v1751827819338!5m2!1sen!2sus"
+          width="600"
+          height="450"
+          style="
+            width: 100vw;
+            overflow: hidden;
+            height: 300px;
+            border: 0;
+            display: block;
+          "
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <!-- <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2260.3239261844255!2d-85.51012712504868!3d42.80172490708607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x881848b89d7be775%3A0x4810ca3f3461d66f!2sParadise%20Pizza!5e1!3m2!1sen!2sus!4v1751827819338!5m2!1sen!2sus"
         width="600"
         height="450"
@@ -793,7 +833,7 @@
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
+      ></iframe> -->
       <div
         class="hours-container"
         style="max-width: 500px; margin: 0 auto; font-family: sans-serif"
