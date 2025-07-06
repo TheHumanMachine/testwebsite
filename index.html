@@ -215,6 +215,117 @@
       }
     </style>
 
+    <!-- FAB -->
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* FAB (Floating Action Button) */
+      .fab {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #e53935;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        z-index: 1000;
+        display: none; /* Hidden on desktop */
+      }
+
+      @media (max-width: 768px) {
+        .fab {
+          display: flex;
+        }
+      }
+
+      /* Modal */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 300px;
+        text-align: center;
+        animation: fadeIn 0.3s ease;
+      }
+
+      .modal-content h3 {
+        margin-top: 0;
+      }
+
+      .modal-item {
+        margin: 10px 0;
+        padding: 10px;
+        background: #fbe9e7;
+        border-radius: 6px;
+      }
+
+      .close-btn {
+        margin-top: 15px;
+        background: #ddd;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+    <button class="fab" onclick="openModal()">☰</button>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="fabModal" onclick="closeModal(event)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <h3>Quick Actions</h3>
+        <button class="close-btn" onclick="closeModal()">Order Online</button>
+        <button class="close-btn" onclick="scrollToSection('menu')">
+          Explore Menu
+        </button>
+        <button class="close-btn" onclick="scrollToSection('find-us')">
+          Find Us
+        </button>
+        <button class="close-btn" href="tel:6165362295">Call Now</button>
+        <!-- <div class="modal-item">🍕 Order Pizza</div>
+        <div class="modal-item">📍 Find Us</div>
+        <div class="modal-item">📞 Call Now</div> -->
+        <button class="close-btn" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+
     <div class="responsive-image-container">
       <img
         src="images/paradiseLogo_transparent2.png"
@@ -659,7 +770,7 @@
 
     <!-- Location Info -->
     <section class="location-section">
-      <h3>Find Us</h3>
+      <h3 id="find-us">Find Us</h3>
       <p>8980 N. Rodgers Ct. Caledonia, MI 49316</p>
       <div
         class="hours-container"
@@ -695,6 +806,23 @@
       function toggleDetails(el) {
         const detail = el.querySelector(".menu-details");
         detail.classList.toggle("open");
+      }
+      function openModal() {
+        document.getElementById("fabModal").style.display = "flex";
+      }
+
+      function closeModal(event) {
+        const modal = document.getElementById("fabModal");
+        if (!event || event.target === modal) {
+          modal.style.display = "none";
+        }
+      }
+      function scrollToSection(id) {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+          closeModal();
+        }
       }
     </script>
   </body>
